@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/LucasBaccin/hub-de-leitura-teste-ui#readme",
   "dependencies": {
-    "cypress": "^15.11.0"
+    "cypress": "^15.11.0",
+    "mocha": "^11.7.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.3.0"
   }
 }
