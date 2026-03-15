@@ -1,12 +1,12 @@
-const { beforeEach } = require("mocha");
 
 describe('Funcionalidade: Contato', () => {
 
-  beforeEach(() => {
+    beforeEach(() => {
     cy.visit('index.html')
-  });
+    })
 
-  it('Deve preencher o formulário de contato com sucesso', () => {
+  it ('Deve preencher o formulário de contato com sucesso', () => {
+   
     cy.get('[name="name"]').type('Lucas Baccin')
 
     cy.get('[name="email"]').type('lucas.baccin@teste.com')
