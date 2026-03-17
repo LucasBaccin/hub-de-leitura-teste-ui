@@ -42,6 +42,6 @@ it.only('Deve clicar no livro Dom Quixote e Adicionar à cesta', () => {
     cy.get(':nth-child(9) > .card > .card-body > .card-title > .text-dark').click()
     cy.get('#add-to-cart-btn').click()
     cy.get('#cart-count').should('contain', 1)
-    cy.get('#cart-count').should('contain', 'Livro adicionado à cesta com sucesso!')
+    cy.get('#alert-container').should('contain', 'Livro adicionado à cesta com sucesso!')
 
 });
