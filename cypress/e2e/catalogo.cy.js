@@ -3,6 +3,7 @@
 import { Faker } from "@faker-js/faker";
 
 describe('Funcionalidade: catalogo de livros', () => {
+    
 
 });
 
@@ -37,7 +38,7 @@ it('Deve clicar no sexto botão Adicionar à cesta', () => {
     cy.get('#global-alert-container').should('contain', 'Dom Casmurro')
 });
 
-it.only('Deve clicar no livro Dom Quixote e Adicionar à cesta', () => {
+it('Deve clicar no livro Dom Quixote e Adicionar à cesta', () => {
     cy.visit("http://localhost:3000/catalog.html")
     cy.get(':nth-child(9) > .card > .card-body > .card-title > .text-dark').click()
     cy.get('#add-to-cart-btn').click()

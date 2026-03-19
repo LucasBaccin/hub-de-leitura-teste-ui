@@ -5,7 +5,7 @@ describe('Funcionalidade: Contato', () => {
     cy.visit('index.html')
     })
 
-  it ('Deve preencher o formulário de contato com sucesso', () => {
+  it('Deve preencher o formulário de contato com sucesso', () => {
    
     cy.get('[name="name"]').type('Lucas Baccin')
 
