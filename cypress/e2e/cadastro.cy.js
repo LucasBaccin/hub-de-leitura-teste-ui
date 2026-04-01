@@ -9,6 +9,10 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cadastroPage.visitarPaginaCadastro()
 
     });
+
+    afterEach(() => {
+        cy.screenshot()
+    })
     it('Deve fazer cadastro com sucesso, usando função', () => {
         let email = `teste${Date.now()}@teste.com`
         cy.get('#name').type('Lucas Baccin')
@@ -45,10 +49,10 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cy.url().should('include', 'dashboard')
     })
 
-    it.only('Deve fazer cadastro com sucessi - Usando Page Objects', () => {
+    it('Deve fazer cadastro com sucessi - Usando Page Objects', () => {
         let email = `teste${Date.now()}@teste.com`
         cadastroPage.preencherCadastro('Lucas Baccin', email, '123456789', 'senha123', 'senha123')
         cy.url().should('include', 'dashboard')
     })
-
+    
 });
