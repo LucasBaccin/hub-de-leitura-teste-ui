@@ -1,12 +1,14 @@
 /// <reference types="cypress"/>
 
 import { faker } from '@faker-js/faker';
+import cadastroPage from '../support/pages/cadastro-page';
 
 describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
 
-beforeEach(() => {
-    cy.visit('register.html')
-});
+    beforeEach(() => {
+        cadastroPage.visitarPaginaCadastro()
+
+    });
     it('Deve fazer cadastro com sucesso, usando função', () => {
         let email = `teste${Date.now()}@teste.com`
         cy.get('#name').type('Lucas Baccin')
@@ -18,8 +20,8 @@ beforeEach(() => {
         cy.get('#register-btn').click()
         cy.url().should('include', 'dashboard')
     });
-    
-      it('Deve fazer cadastro com sucesso, com faker', () => {
+
+    it('Deve fazer cadastro com sucesso, com faker', () => {
         let email = faker.internet.email()
         cy.get('#name').type('Lucas Baccin')
         cy.get('#email').type(email)
@@ -40,6 +42,12 @@ beforeEach(() => {
             'Teste@123',
             'Teste@123'
         )
+        cy.url().should('include', 'dashboard')
+    })
+
+    it.only('Deve fazer cadastro com sucessi - Usando Page Objects', () => {
+        let email = `teste${Date.now()}@teste.com`
+        cadastroPage.preencherCadastro('Lucas Baccin', email, '123456789', 'senha123', 'senha123')
         cy.url().should('include', 'dashboard')
     })
 
